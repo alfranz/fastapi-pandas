@@ -1,6 +1,6 @@
 # FastAPI - Pandas Docker Image 🐼 🐳
 
-[![Create and publish a Docker image](https://github.com/alfranz/fastapi-pandas/actions/workflows/build-image.yml/badge.svg)](https://github.com/alfranz/fastapi-pandas/actions/workflows/build-image.yml)
+[![Build Docker image](https://github.com/alfranz/fastapi-pandas/actions/workflows/build-image.yml/badge.svg?branch=master)](https://github.com/alfranz/fastapi-pandas/actions/workflows/build-image.yml)
 
 --- 
 
