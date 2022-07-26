@@ -1,0 +1,9 @@
+requests
+Jinja2
+aiofiles
+uvicorn[standard]
+gunicorn
+fastapi
+pandas
+python-multipart
+psycopg2
