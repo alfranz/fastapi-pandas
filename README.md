@@ -19,6 +19,7 @@ Python libraries:
 - pandas
 - python-multipart
 - psycopg2
+- sqlalchemy
 
 ## How to use?
 

@@ -7,3 +7,4 @@ fastapi
 pandas
 python-multipart
 psycopg2
+sqlalchemy
