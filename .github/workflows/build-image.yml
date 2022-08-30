@@ -33,3 +33,4 @@ jobs:
           docker build . --tag ghcr.io/alfranz/fastapi-pandas:latest
           docker build . --tag ghcr.io/alfranz/fastapi-pandas:${{ env.IMAGE_TAG }}
           docker push ghcr.io/alfranz/fastapi-pandas:latest
+          docker push ghcr.io/alfranz/fastapi-pandas:${{ env.IMAGE_TAG }}
