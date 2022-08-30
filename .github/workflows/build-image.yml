@@ -21,10 +21,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Exit if not on master branch
-        if: endsWith(github.ref, 'master') == false
-        run: exit -1
-
       - name: Log in to the Container registry
         uses: docker/login-action@v1
         with:
@@ -37,3 +33,4 @@ jobs:
           docker build . --tag ghcr.io/alfranz/fastapi-pandas:latest
           docker build . --tag ghcr.io/alfranz/fastapi-pandas:${{ env.IMAGE_TAG }}
           docker push ghcr.io/alfranz/fastapi-pandas:latest
+          docker push ghcr.io/alfranz/fastapi-pandas:${{ env.IMAGE_TAG }}
