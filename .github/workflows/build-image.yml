@@ -2,11 +2,13 @@ name: Build Docker image
 
 on:
   push:
-    branches: ["master"]
+    tags:
+      - v*
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: fastapi-pandas
+  IMAGE_TAG: ${{github.ref_name}}
 
 jobs:
   build-and-push-image:
@@ -19,6 +21,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Exit if not on master branch
+        if: endsWith(github.ref, 'master') == false
+        run: exit -1
+
       - name: Log in to the Container registry
         uses: docker/login-action@v1
         with:
@@ -29,4 +35,5 @@ jobs:
       - name: Build and push the Docker image
         run: |
           docker build . --tag ghcr.io/alfranz/fastapi-pandas:latest
+          docker build . --tag ghcr.io/alfranz/fastapi-pandas:${{ env.IMAGE_TAG }}
           docker push ghcr.io/alfranz/fastapi-pandas:latest
