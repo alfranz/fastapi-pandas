@@ -1,5 +1,5 @@
 # Builder for psycopg
-FROM python:3.9-slim-buster as builder
+FROM python:3.11-slim-buster as builder
 
 RUN apt-get update \
     && apt-get -y install libpq-dev gcc
@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Actual image contents
 
-FROM python:3.9-slim-buster
+FROM python:3.11-slim-buster
 
 RUN apt-get update \
     && apt-get -y install libpq-dev && \
